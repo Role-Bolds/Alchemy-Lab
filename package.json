@@ -1,21 +1,21 @@
 {
-  "name": "rename-me",
+  "name": "charisma-bot",
   "version": "0.0.0",
-  "description": "",
+  "description": "A discord bot for the Charisma Bonus community",
   "main": "main.js",
   "type": "commonjs",
   "directories": {
     "lib": "src/lib"
   },
   "author": {
-    "name": "",
-    "email": "test@example.com",
-    "url": "https://example.com"
+    "name": "RowenStipe",
+    "email": "rowen.stipe@gmail.com",
+    "url": "https://rowenstipe.com"
   },
-  "publisher": "",
+  "publisher": "Charisma Bonus",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Charisma-Bonus/Charisma-Bot"
   },
   "license": "MIT",
   "dependencies": {

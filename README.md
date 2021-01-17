@@ -6,7 +6,7 @@ Aims to make getting your first bot going easy.
 
 ## Shields
 
-[![Coverage Status](https://coveralls.io/repos/github/Charisma-Bonus/vscode-discord.js-typescript-bootstrap/badge.svg?branch=main)](https://coveralls.io/github/Charisma-Bonus/vscode-discord.js-typescript-bootstrap?branch=main) [![DepShield Badge](https://depshield.sonatype.org/badges/Charisma-Bonus/vscode-discord.js-typescript-bootstrap/depshield.svg)](https://depshield.github.io)
+[![Coverage Status](https://coveralls.io/repos/github/Charisma-Bonus/CharismaBot/badge.svg?branch=main)](https://coveralls.io/github/Charisma-Bonus/Charisma-Bot?branch=main) [![DepShield Badge](https://depshield.sonatype.org/badges/Charisma-Bonus/Charisma-Bot/depshield.svg)](https://github.com/Charisma-Bonus/Charisma-Bot/security)
 
 ## Initial setup
 
