@@ -1,0 +1,10 @@
+.vagrant
+node_modules/
+build/
+debug/
+logs/
+*.env
+*.log
+.nyc_output
+coverage
+*.cpuprofile

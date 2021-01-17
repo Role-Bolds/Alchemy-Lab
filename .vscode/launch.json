@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "name": "Build bot",
+            "program": "${workspaceFolder}/build/Main.js",
+            "request": "launch",
+            "envFile": "${workspaceFolder}/secrets/.env",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "outputCapture": "std",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
+        },
+        {
+            "type": "node",
+            "name": "Debug bot",
+            "program": "${workspaceFolder}/build/Main.js",
+            "runtimeArgs": ["--trace-warnings"],
+            "envFile": "${workspaceFolder}/secrets/.env",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "outputCapture": "std",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
+        },
+        {
+            "internalConsoleOptions": "openOnSessionStart",
+            "name": "Mocha Tests",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": ["test/**/*.test.ts"],
+            "request": "launch",
+            "envFile": "${workspaceFolder}/secrets/.env",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "NPM run Coverage",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "coverage"
+            ],
+            "envFile": "${workspaceFolder}/secrets/coverage.env",
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        }
+    ]
+}
