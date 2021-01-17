@@ -23,3 +23,38 @@ export type envType = {
   DISCORD_BOT_PREFIX: string,
   DISCORD_BOT_USER_TOKEN: string,
 }
+
+export type MotherShipSkillType = {
+  name: string;
+  description: string;
+  type: {
+    name: string,
+    cost: number,
+    bonus: number
+  }
+  prerequisiteFor?: string[];
+};
+
+export type MotherShipClassType = {
+  name: string;
+  starting: {
+    sanity: number,
+    fear: number;
+    body: number;
+    armor: number;
+    intelligence: number;
+    strength: number;
+    speed: number;
+    combat: number;
+    skills: {
+      guaranteed: string[];
+      pick: {
+        list: string[];
+        choose: number;
+      };
+    };
+    skillPoints: number;
+  };
+  experienceGain: string;
+  dealing: string;
+};

@@ -4,7 +4,7 @@ import { Config } from './Config';
 
 const logName = new Config().logName;
 
-export function logger(logging: loggingOptions) {
+export function logger(logging: loggingOptions):unknown {
   let out;
   switch (logging.source) {
     case undefined:
@@ -44,7 +44,7 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
@@ -77,7 +77,7 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
@@ -112,7 +112,7 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
@@ -147,12 +147,11 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
-        )}`;
-      }
+        )}`;      }
       return out.info(logging.message);
   }
 }
