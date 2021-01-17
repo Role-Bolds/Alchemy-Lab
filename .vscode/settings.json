@@ -1,0 +1,20 @@
+{
+
+    "editor.tabSize": 2,
+    "mochaExplorer.exit": true,
+    "mochaExplorer.files": "src/**/*.test.ts",
+    "mochaExplorer.require": "ts-node/register",
+    "vscode-coverage-highlighter.defaultState": "enable",
+    "lcov.path": [
+        "coverage/lcov.info",
+    ],
+    "lcov.watch": [{
+        "pattern": "**/*.ts",
+        "command": "npm run test-coverage"
+      }],      
+    "cSpell.words": [
+        "DEFVAL",
+        "appenders",
+        "typeit"
+    ]
+}
