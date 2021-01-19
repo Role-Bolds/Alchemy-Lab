@@ -3,6 +3,7 @@ import { loggingOptions } from './Types';
 import { Config } from './Config';
 
 const logName = new Config().logName;
+const debugEnable = new Config().debug;
 
 export function logger(logging: loggingOptions):unknown {
   let out;
@@ -17,6 +18,7 @@ export function logger(logging: loggingOptions):unknown {
 // TODO Clean up case to only change unalike properties
   switch (logging.type) {
     case 'debug':
+      if(debugEnable){
       configure({
         appenders: {
           out: {
@@ -50,7 +52,9 @@ export function logger(logging: loggingOptions):unknown {
           ' '
         )}`;
       }
-      return out.debug(logging.message);
+        return out.debug(logging.message);
+      }
+      break;
     case 'error':
       configure({
         appenders: {

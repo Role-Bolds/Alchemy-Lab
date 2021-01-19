@@ -9,7 +9,7 @@
             "name": "Build bot",
             "program": "${workspaceFolder}/build/Main.js",
             "request": "launch",
-            "envFile": "${workspaceFolder}/secrets/.env",
+            "envFile": "${workspaceFolder}/secrets/build.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -24,7 +24,7 @@
             "name": "Debug bot",
             "program": "${workspaceFolder}/build/Main.js",
             "runtimeArgs": ["--trace-warnings"],
-            "envFile": "${workspaceFolder}/secrets/.env",
+            "envFile": "${workspaceFolder}/secrets/build.env",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -41,7 +41,7 @@
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": ["test/**/*.test.ts"],
             "request": "launch",
-            "envFile": "${workspaceFolder}/secrets/.env",
+            "envFile": "${workspaceFolder}/secrets/coverage.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],

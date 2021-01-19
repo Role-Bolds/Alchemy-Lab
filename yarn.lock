@@ -2164,6 +2164,13 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+discord-starboards@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/discord-starboards/-/discord-starboards-2.1.4.tgz#8ffa1ed35e25f38fa6bc74c76d9375ad32a8fef9"
+  integrity sha512-9SrQGjfKP3V/1ImLDSmFC49XspmbbSC7x7aGRGhfgirCHZhDRERh/XmgO+HzFublof+1pFU+Tvg/TFNs4aTb5A==
+  dependencies:
+    discord.js "^12.5.1"
+
 discord.js@^12.2.0, discord.js@^12.5.1:
   version "12.5.1"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.5.1.tgz#992b45753e3815526a279914ccc281d3496f5990"

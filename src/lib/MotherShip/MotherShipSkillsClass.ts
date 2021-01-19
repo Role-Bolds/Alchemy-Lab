@@ -2,7 +2,7 @@ import { SKILLS_LIST, TRAINED_SKILLS } from "./lists/Skills";
 import { MotherShipClassType, MotherShipSkillType } from "../Types";
 import { randomNumberGenerator } from "../RandomNumberGenerator";
 import { logger } from "../Logger";
-import { debug } from "console";
+import { fileName } from '../Util';
 
 export class Skills {
   // tslint:disable-next-line: variable-name
@@ -77,7 +77,7 @@ export function additionalSelectableSkills(skillsList: MotherShipSkillType[]):st
       returns.push(element);
     });
   }
-  logger({message: `Generated skills unlock: ${returns}`, type:'debug'});
+  logger({message: `Generated skills unlock: ${returns}`, type:'debug', source:fileName(__filename)});
   return returns;
 }
 
@@ -89,7 +89,7 @@ export function selectNewSkill():null {
  * @param input
  */
 export function randomStartingSkills(input: MotherShipClassType):MotherShipSkillType[] {
-logger({message: `Using:`, json:input, type:'debug'});
+logger({message: `Using:`, json:input, type:'debug', source:fileName(__filename)});
   let initialList: string[] = [];
   switch (input.starting.skills.guaranteed) {
     case undefined:
@@ -113,7 +113,7 @@ logger({message: `Using:`, json:input, type:'debug'});
             randomNumberGenerator(input.starting.skills.pick.list.length)
           ];
         if (initialList.indexOf(element) !== -1) {
-          logger({message: `Choose an already selected item: ${element}`, type:'debug'});
+          logger({message: `Choose an already selected item: ${element}`, type:'debug', source:fileName(__filename)});
         } else {
           initialList = initialList.concat(element);
           index++;
@@ -123,10 +123,10 @@ logger({message: `Using:`, json:input, type:'debug'});
   }
 
   let initialSkills: MotherShipSkillType[] = checkSkillList(initialList);
-   logger({message: `Skills:`, json:initialSkills, type:'debug'});
+   logger({message: `Skills:`, json:initialSkills, type:'debug', source:fileName(__filename)});
   let skillPoints = input.starting.skillPoints;
   while (skillPoints > 0) {
-    logger({message: `Skill Points: ${skillPoints}`, type:'debug'});
+    logger({message: `Skill Points: ${skillPoints}`, type:'debug', source:fileName(__filename)});
     const additionalSkills: MotherShipSkillType[] = checkSkillList(
       additionalSelectableSkills(initialSkills)
     );
@@ -135,21 +135,21 @@ logger({message: `Using:`, json:input, type:'debug'});
     );
     const selectedSkill: MotherShipSkillType =
       selectableSkills[randomNumberGenerator(selectableSkills.length)];
-    logger({message:"Selected",json:selectedSkill, type:'debug'});
+    logger({message:"Selected",json:selectedSkill, type:'debug', source:fileName(__filename)});
     if (
       initialSkills.indexOf(selectedSkill) !== -1 ||
       selectedSkill.type.cost > skillPoints
     ) {
       logger({message:
         `Chosen skill already selected or too expensive skillPoints[${skillPoints}]: ${selectedSkill.name} ${selectedSkill.type.name}:${selectedSkill.type.cost}`
-      , type:'error'});
+      , type:'error', source:fileName(__filename)});
     } else {
-      logger({message:`Chosen Skill: ${selectedSkill.name}`});
+      logger({message:`Chosen Skill: ${selectedSkill.name}`, type: 'debug', source:fileName(__filename)});
       initialSkills = initialSkills.concat(selectedSkill);
       skillPoints = skillPoints - selectedSkill.type.cost;
     }
-    // debug(`Skill points left to sped: ${skillPoints}`)
+    logger({message: `Skill points left to sped: ${skillPoints}`, type:'debug', source:fileName(__filename)})
   }
-  debug(initialSkills, 'json');
+  logger({message: 'Initial Skills', json:initialSkills, type:'debug', source:fileName(__filename)});
   return initialSkills;
 }

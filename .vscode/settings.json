@@ -13,20 +13,26 @@
         "command": "npm run test-coverage"
       }],      
     "cSpell.words": [
+        "Bioscanner",
+        "Comms",
         "DEFVAL",
         "Fortitudes",
         "LOADOUTS",
         "Loadout",
+        "Lockpick",
         "MOTHERSHIP",
         "Spacefarer",
         "Spacefarer's",
         "Taxidermied",
         "Ushanka",
+        "Vacsuit",
         "Vantablack",
         "Xenomorph",
         "appenders",
         "mschar",
         "msgen",
-        "typeit"
+        "tsbot",
+        "typeit",
+        "vaccuum"
     ]
 }
