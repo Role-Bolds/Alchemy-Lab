@@ -58,3 +58,22 @@ export type MotherShipClassType = {
   experienceGain: string;
   dealing: string;
 };
+
+export type MotherShipEmbed = {
+  color: unknown;
+  title: string;
+  author: {
+    name: string;
+    icon_url: string;
+  };
+  description: string;
+  fields: {
+    name: string;
+    value: string;
+    inline?: boolean;
+  }[];
+  timestamp: Date;
+  footer: {
+    text: string;
+  };
+};

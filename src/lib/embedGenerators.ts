@@ -1,14 +1,15 @@
 import { MotherShipCharacter } from "./MotherShip/MotherShipCharacterClass";
 import { green, orange, blue, red } from "color-name";
 import { User } from "discord.js";
-import { MotherShipSkillType } from "./Types";
+import { MotherShipSkillType } from './Types';
 
 /**
  * Generates embed message
  * @param {motherShipCharacter} Mothership character to embed
  * @param {user} User to make character author
  */
-export function characterEmbedGen(motherShipCharacter: MotherShipCharacter, user: User):unknown {
+
+export function motherShipCharacterEmbedGen(motherShipCharacter: MotherShipCharacter, user: User) {
   // TODO Make a type for this
   const marineCombatBonus = () => {
     switch (motherShipCharacter.motherShipClass.name) {
@@ -32,7 +33,8 @@ export function characterEmbedGen(motherShipCharacter: MotherShipCharacter, user
         return green;
     }
   };
-  return {
+
+  const embed = {
     color: classColor(),
     title: `${motherShipCharacter.motherShipClass.name} | ${motherShipCharacter.firstName} ${motherShipCharacter.lastName}`,
     author: {
@@ -81,7 +83,7 @@ ${motherShipCharacter.gear}`,
       }, */
       {
         name: "Skills",
-        value: skillTextBlock(motherShipCharacter.skills),
+        value: motherShipSkillTextBlock(motherShipCharacter.skills),
       },
       {
         name: "XP",
@@ -105,9 +107,10 @@ ${motherShipCharacter.gear}`,
       text: `MoThErShIp`,
     },
   };
+  return embed;
 }
 
-function skillTextBlock(input: MotherShipSkillType[]) {
+function motherShipSkillTextBlock(input: MotherShipSkillType[]) {
   let returnString = "";
   // tslint:disable-next-line: prefer-for-of
   for (let index = 0; index < input.length; index++) {
