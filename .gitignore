@@ -3,6 +3,7 @@ node_modules/
 build/
 debug/
 logs/
+!*/example.env
 *.env
 *.log
 .nyc_output

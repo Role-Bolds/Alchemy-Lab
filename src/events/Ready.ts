@@ -1,5 +1,5 @@
 import { logger } from '../lib/Logger';
-import { config } from '../Main';
+import { config } from "../Bootstrap";
 import { commandsList, fileName } from '../lib/Util';
 import { On } from '@typeit/discord';
 
@@ -12,7 +12,6 @@ export class Ready {
     logger({ message: 'Client ready', source: `${fileName(__filename)}` });
     logger({
       message: `Code base: ${config.version}`,
-      type: 'debug',
       source: `${fileName(__filename)}`,
     });
     logger({
@@ -24,6 +23,6 @@ export class Ready {
       type: 'error',
       source: `${fileName(__filename)}`,
     });
-    commandsList();
+    logger({message: 'Debug enabled', type:"debug", source:fileName(__filename)})
   }
 }

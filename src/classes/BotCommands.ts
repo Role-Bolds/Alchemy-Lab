@@ -1,9 +1,9 @@
 import { CommandMessage, CommandNotFound, Discord } from "@typeit/discord";
 import { join } from "path";
-import { config } from '../Main';
+import { config } from "../Bootstrap";
 const prefix = config.prefix[0];
 @Discord(prefix, {
-  import: [join(__dirname, "commands", "*.js")],
+  import: [join(__dirname, "../commands", "*.js")],
 })
 export class BotCommands {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

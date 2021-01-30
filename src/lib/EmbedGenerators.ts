@@ -9,7 +9,7 @@ import { MotherShipSkillType } from './Types';
  * @param {user} User to make character author
  */
 
-export function motherShipCharacterEmbedGen(motherShipCharacter: MotherShipCharacter, user: User) {
+export function motherShipCharacterEmbedGen(motherShipCharacter: MotherShipCharacter, user: User):unknown {
   // TODO Make a type for this
   const marineCombatBonus = () => {
     switch (motherShipCharacter.motherShipClass.name) {

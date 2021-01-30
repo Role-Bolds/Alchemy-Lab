@@ -2,7 +2,7 @@
   "name": "charisma-bot",
   "version": "0.0.0",
   "description": "A discord bot for the Charisma Bonus community",
-  "main": "main.js",
+  "main": "Bootstrap.js",
   "type": "commonjs",
   "directories": {
     "lib": "src/lib"
@@ -22,10 +22,10 @@
     "@ianwalter/requester": "^2.4.3",
     "@typeit/discord": "^4.0.8",
     "@types/node": "^14.14.12",
-    "discord-starboards": "^2.1.4",
     "discord.js": "^12.5.1",
     "env-var": "^7.0.0",
-    "log4js": "^6.3.0"
+    "log4js": "^6.3.0",
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -33,6 +33,7 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.13",
     "@types/mocha": "^8.2.0",
+    "@types/pg": "^7.14.9",
     "@types/ws": "^7.4.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
