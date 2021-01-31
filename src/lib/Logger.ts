@@ -87,6 +87,7 @@ export function logger(logging: loggingOptions):void {
           ' '
         )}`;
       }
+      logging.message = `${logging.message}\n`
       return out.error(logging.message);
     case 'info':
       configure({

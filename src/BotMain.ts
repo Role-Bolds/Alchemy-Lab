@@ -1,23 +1,21 @@
 import { logger } from './lib/Logger';
 import { Client } from '@typeit/discord';
-import { tokenSanitize, fileName, commandsList } from './lib/Util';
+import { tokenSanitize, fileName} from './lib/Util';
 import { config } from './Bootstrap';
 import { exit } from 'process';
 
-
-
 export class BotMain{
-	public client: Client
+	public clientBot: Client
 
-	constructor({clientPerams}){
-		this.client = clientPerams;
+	constructor(botPerams: Client){
+		this.clientBot = botPerams;
 	}
 
 	public async startBot():Promise<void> {
 		logger({ message: 'Starting bot', source:fileName(__filename) });
 		logger({ message: 'Logging in', source:fileName(__filename)});
 		try {
-			await this.client.login(`${config.token}`);
+			await this.clientBot.login(`${config.token}`);
 			if(Client.getCommands() === []){throw new Error("No commands found");
 			}
 		} catch (error) {
