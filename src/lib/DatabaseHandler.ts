@@ -8,10 +8,9 @@ export class Database extends BotMain {
     super(dataBase.botPerams);
     // Settings are set from environmental variables
     this.clientDB = new Client({
-      database: dataBase.botDataBase,
       ssl: {
-        rejectUnauthorized: true,
-        cert: `${__dirname}/../../secrets/ssl.crt`
+        rejectUnauthorized: false,
+        ca: `${__dirname}/../../secrets/ssl.crt`
       }
     });
   }
