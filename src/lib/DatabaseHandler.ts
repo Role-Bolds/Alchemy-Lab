@@ -10,6 +10,7 @@ export class Database extends BotMain {
     this.clientDB = new Client({
       ssl: {
         rejectUnauthorized: false,
+        // Change depending on cert type used
         ca: `${__dirname}/../../secrets/ssl.crt`
       }
     });
