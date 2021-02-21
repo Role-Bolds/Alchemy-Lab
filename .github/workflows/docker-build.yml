@@ -3,8 +3,10 @@ name: docker
 on:
   push:
     branches:
+      - 'main'
+      - 'dev'
       - 'starboard'
-    tags: 'v*'
+    tags: 'v*.*.*'
 
 env:
   IMAGE_NAME: charisma-bot
