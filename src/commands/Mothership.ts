@@ -4,7 +4,6 @@ import { fileName } from '../lib/Util';
 import { MotherShipCharacter } from '../lib/MotherShip/MotherShipCharacterClass';
 import { motherShipCharacterEmbedGen } from '../lib/EmbedGenerators';
 
-
 export class MotherShip {
   @Command("msgen :class")
   @Infos({description:"generate a mothership character"})
