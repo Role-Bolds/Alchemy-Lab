@@ -2,13 +2,11 @@ name: docker
 
 on:
   push:
-    branches:
-      - 'main'
-      - 'dev'
     tags: 'v*.*.*'
 
 env:
   IMAGE_NAME: charisma-bot
+  ORG_NAME: Charisma-Bonus
 
 jobs:
   docker:
@@ -45,7 +43,7 @@ jobs:
 
       - name: Push image to GitHub Container repo
         run: |
-          IMAGE_ID=ghcr.io/Charisma-Bonus/$IMAGE_NAME
+          IMAGE_ID=ghcr.io/$ORG_NAME/$IMAGE_NAME
           
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
