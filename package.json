@@ -31,7 +31,6 @@
     "@ianwalter/requester": "^2.4.3",
     "@typeit/discord": "^4.0.8",
     "@types/node": "^14.14.12",
-    "discord-starboards": "^2.1.4",
     "discord.js": "^12.5.1",
     "env-var": "^7.0.0",
     "log4js": "^6.3.0",
