@@ -1,5 +1,4 @@
-import { config } from "../Main";
-import { request } from "https";
+import { config } from "../Bootstrap";
 
 /**
  * Direct interaction with
