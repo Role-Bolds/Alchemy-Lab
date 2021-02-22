@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-import { config } from "../Main";
+import { config } from "../Bootstrap";
 import { Client, Command, CommandInfos, CommandMessage, Infos, RuleBuilder } from "@typeit/discord";
 
 export class Help {

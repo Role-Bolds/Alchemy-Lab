@@ -1,8 +1,8 @@
 
 import path = require("path");
 import { logger } from "./Logger";
-import { Client} from "@typeit/discord";
-import { config } from "../Main";
+import { Client, CommandInfos, RuleBuilder } from '@typeit/discord';
+import { config } from "../Bootstrap";
 
 
 /**
@@ -16,13 +16,15 @@ export function fileName(fullPath: string):string {
 /**
  * Print commands to logger
  */
-export function commandsList():void {
+export function commandsList():CommandInfos<unknown, RuleBuilder>[] {
   const commandsStore = Client.getCommands();
   logger({
     message: "Command List",
     json: commandsStore,
     source: `${fileName(__filename)}`,
+    type: 'debug'
   });
+  return commandsStore;
 }
 
 /**
