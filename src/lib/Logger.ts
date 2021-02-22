@@ -5,11 +5,7 @@ import { Config } from './Config';
 const logName = new Config().logName;
 const debugEnable = new Config().debug;
 
-<<<<<<< HEAD
-export function logger(logging: loggingOptions):unknown {
-=======
 export function logger(logging: loggingOptions):void {
->>>>>>> 08b45eb3508e7f80b6946106d55c06e3d435fa63
   let out;
   switch (logging.source) {
     case undefined:

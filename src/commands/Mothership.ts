@@ -2,12 +2,7 @@ import { Command, Infos, CommandMessage } from '@typeit/discord';
 import { logger } from '../lib/Logger';
 import { fileName } from '../lib/Util';
 import { MotherShipCharacter } from '../lib/MotherShip/MotherShipCharacterClass';
-<<<<<<< HEAD
-import { motherShipCharacterEmbedGen } from '../lib/embedGenerators';
-=======
 import { motherShipCharacterEmbedGen } from '../lib/EmbedGenerators';
->>>>>>> 08b45eb3508e7f80b6946106d55c06e3d435fa63
-
 
 export class MotherShip {
   @Command("msgen :class")
