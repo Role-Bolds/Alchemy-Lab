@@ -10,9 +10,14 @@ Aims to make getting your first bot going easy.
 
 ## Initial setup
 
-  _required:_ `node yarn git`
+  _Required:_ `node yarn git`
+  _Recommended for editing:_ `vscode`
 
-  1) Apply template to github repo
-  2) Clone your git repo a clean folder
-  3) Run `yarn install` to install dependencies
-  4) Setup your `.env` file in `./secrets` for vscode
+  1) Apply template to github repo.
+  2) Clone your git repo a clean folder.
+  3) Run `yarn install` to install dependencies.
+  4) Setup your `build.env` file in `./secrets` for vscode building.
+     * `./secrets/example.env` contains expected configuration settings.
+     * Use native environmental vars when possible.
+  5) ???
+  6) Profit.

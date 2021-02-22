@@ -3,8 +3,9 @@ import { loggingOptions } from './Types';
 import { Config } from './Config';
 
 const logName = new Config().logName;
+const debugEnable = new Config().debug;
 
-export function logger(logging: loggingOptions) {
+export function logger(logging: loggingOptions):void {
   let out;
   switch (logging.source) {
     case undefined:
@@ -17,6 +18,7 @@ export function logger(logging: loggingOptions) {
 // TODO Clean up case to only change unalike properties
   switch (logging.type) {
     case 'debug':
+      if(debugEnable){
       configure({
         appenders: {
           out: {
@@ -44,13 +46,15 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
         )}`;
       }
-      return out.debug(logging.message);
+        return out.debug(logging.message);
+      }
+      break;
     case 'error':
       configure({
         appenders: {
@@ -77,12 +81,13 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
         )}`;
       }
+      logging.message = `${logging.message}\n`
       return out.error(logging.message);
     case 'info':
       configure({
@@ -112,7 +117,7 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
@@ -147,12 +152,11 @@ export function logger(logging: loggingOptions) {
         },
       });
       if (logging.json !== undefined) {
-        logging.message = `${logging.message}\n${JSON.stringify(
+        logging.message = `\n${logging.message}\n${logging.message.replace(/([^-])/gim,'-')}\n${JSON.stringify(
           logging.json,
           null,
           ' '
-        )}`;
-      }
+        )}`;      }
       return out.info(logging.message);
   }
 }
